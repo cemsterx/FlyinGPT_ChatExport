@@ -35,6 +35,10 @@ Click ⚙️ Color Settings to customize:
 > (`https://chat.openai.com` or `https://chatgpt.com`).  
 > This is intentional — the extension activates only in ChatGPT tabs to ensure performance and privacy.
 
+## Examples
+
+Check out the [examples](examples/) directory to see sample exports in all three formats (HTML, Markdown, and JSON).
+
 ## License
 
 MIT
