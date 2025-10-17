@@ -10,7 +10,7 @@ let LIGHT_COLORS = {
 };
 
 let DARK_COLORS = {
-  headingBG: '#4a4a2a',
+  headingBG: '#fff685',
   userBG: '#fbc6e0',
   assistantBG: '#2a2a2a',
   metaGray: '#bbbbbb',
