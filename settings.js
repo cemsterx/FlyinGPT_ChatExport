@@ -18,7 +18,6 @@ const DEFAULTS = {
   options: {
     fontFamily: 'system-ui',
     fontSize: 14,
-    showTimestamps: false,
     customCSS: ''
   }
 };
@@ -56,14 +55,12 @@ chrome.storage.sync.get(['options'], (result) => {
   const options = result.options || {
     fontFamily: 'system-ui',
     fontSize: 14,
-    showTimestamps: false,
     customCSS: ''
   };
   
   document.getElementById('fontFamily').value = options.fontFamily;
   document.getElementById('fontSize').value = options.fontSize;
   document.getElementById('fontSizeValue').textContent = options.fontSize + 'px';
-  document.getElementById('showTimestamps').checked = options.showTimestamps;
   document.getElementById('customCSS').value = options.customCSS || '';
 });
 
@@ -106,7 +103,6 @@ document.getElementById('save').addEventListener('click', () => {
   const options = {
     fontFamily: document.getElementById('fontFamily').value,
     fontSize: parseInt(document.getElementById('fontSize').value),
-    showTimestamps: document.getElementById('showTimestamps').checked,
     customCSS: document.getElementById('customCSS').value
   };
   
@@ -137,7 +133,6 @@ document.getElementById('reset').addEventListener('click', () => {
     document.getElementById('fontFamily').value = DEFAULTS.options.fontFamily;
     document.getElementById('fontSize').value = DEFAULTS.options.fontSize;
     document.getElementById('fontSizeValue').textContent = DEFAULTS.options.fontSize + 'px';
-    document.getElementById('showTimestamps').checked = DEFAULTS.options.showTimestamps;
     document.getElementById('customCSS').value = DEFAULTS.options.customCSS;
     
     showStatus('Reset to default colors!');
