@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlyingGPT Settings</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    
+    .settings-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .themes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .theme-section {
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    
+    .theme-section h2 {
+      font-size: 16px;
+      margin: 0 0 20px 0;
+      color: #555;
+      text-align: center;
+    }
+    
+    .color-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    
+    .color-item label {
+      font-size: 13px;
+      color: #666;
+      font-weight: 500;
+    }
+    
+    .color-input-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    input[type="color"] {
+      width: 50px;
+      height: 35px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    
+    input[type="text"] {
+      flex: 1;
+      padding: 6px 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    
+    button {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .save-btn {
+      background: #667eea;
+      color: white;
+    }
+    
+    .save-btn:hover {
+      background: #5568d3;
+    }
+    
+    .reset-btn {
+      background: #e0e0e0;
+      color: #333;
+    }
+    
+    .reset-btn:hover {
+      background: #d0d0d0;
+    }
+    
+    .status {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+      display: none;
+    }
+    
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+    }
+  </style>
+</head>
+<body>
+  <div class="settings-container">
+    <h1>✈️ FlyingGPT Color Settings</h1>
+    
+    <div class="themes-grid">
+      <!-- Light Theme -->
+      <div class="theme-section">
+        <h2>☀️ Light Theme</h2>
+        
+        <div class="color-item">
+          <label>Heading Background</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="light-headingBG" value="#fff685">
+            <input type="text" id="light-headingBG-text" value="#fff685">
+          </div>
+        </div>
+        
+        <div class="color-item">
+          <label>User Message Background</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="light-userBG" value="#ffd6e7">
+            <input type="text" id="light-userBG-text" value="#ffd6e7">
+          </div>
+        </div>
+        
+        <div class="color-item">
+          <label>Assistant Message Background</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="light-assistantBG" value="#ffffff">
+            <input type="text" id="light-assistantBG-text" value="#ffffff">
+          </div>
+        </div>
+        
+        <div class="color-item">
+          <label>Meta Text</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="light-metaGray" value="#555555">
+            <input type="text" id="light-metaGray-text" value="#555555">
+          </div>
+        </div>
+        
+        <div class="color-item">
+          <label>Link Color</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="light-linkBlue" value="#1a5fff">
+            <input type="text" id="light-linkBlue-text" value="#1a5fff">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dark Theme -->
+      <div class="theme-section">
+        <h2>🌙 Dark Theme</h2>
+        
+        <div class="color-item">
+          <label>Heading Background</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="dark-headingBG" value="#4a4a2a">
+            <input type="text" id="dark-headingBG-text" value="#4a4a2a">
+          </div>
+        </div>
+        
+        <div class="color-item">
+          <label>User Message Background</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="dark-userBG" value="#4a2a3a">
+            <input type="text" id="dark-userBG-text" value="#4a2a3a">
+          </div>
+        </div>
+        
+        <div class="color-item">
+          <label>Assistant Message Background</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="dark-assistantBG" value="#2a2a2a">
+            <input type="text" id="dark-assistantBG-text" value="#2a2a2a">
+          </div>
+        </div>
+        
+        <div class="color-item">
+          <label>Meta Text</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="dark-metaGray" value="#bbbbbb">
+            <input type="text" id="dark-metaGray-text" value="#bbbbbb">
+          </div>
+        </div>
+        
+        <div class="color-item">
+          <label>Link Color</label>
+          <div class="color-input-wrapper">
+            <input type="color" id="dark-linkBlue" value="#6b9eff">
+            <input type="text" id="dark-linkBlue-text" value="#6b9eff">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="button-group">
+      <button class="save-btn" id="save">Save Settings</button>
+      <button class="reset-btn" id="reset">Reset to Defaults</button>
+    </div>
+    
+    <div class="status" id="status"></div>
+  </div>
+  <div style="margin-top: 30px; padding-top: 30px; border-top: 2px solid #e0e0e0;">
+      <h2 style="font-size: 16px; margin-bottom: 20px; color: #555;">⚙️ Export Options</h2>
+      
+      <div style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #666;">Font Family</label>
+        <select id="fontFamily" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+          <option value="system-ui">System Default</option>
+          <option value="Arial">Arial</option>
+          <option value="Georgia">Georgia</option>
+          <option value="'Times New Roman'">Times New Roman</option>
+          <option value="'Courier New'">Courier New</option>
+          <option value="Verdana">Verdana</option>
+        </select>
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #666;">Font Size</label>
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <input type="range" id="fontSize" min="12" max="20" value="14" style="flex: 1;">
+          <span id="fontSizeValue" style="min-width: 40px; font-weight: 600;">14px</span>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <label style="display: flex; align-items: center; cursor: pointer;">
+          <input type="checkbox" id="showTimestamps" style="margin-right: 8px;">
+          <span>Show timestamps in messages</span>
+        </label>
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #666;">Custom CSS (Advanced)</label>
+        <textarea id="customCSS" placeholder="Add your custom CSS rules here..." style="width: 100%; min-height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-family: monospace; font-size: 12px; resize: vertical;"></textarea>
+      </div>
+    </div>
+  <script src="settings.js"></script>
+</body>
+</html>
