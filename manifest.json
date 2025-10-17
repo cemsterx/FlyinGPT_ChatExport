@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "FlyingGPT",
+  "name": "FlyinGPT ChatExport",
   "version": "1.0.0",
   "description": "Export ChatGPT conversations as HTML, Markdown, or JSON",
   "permissions": [
