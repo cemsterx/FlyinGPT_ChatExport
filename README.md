@@ -31,5 +31,10 @@ Click ⚙️ Color Settings to customize:
 - Font preferences
 - Custom CSS rules
 
+> **Note:** The FlyingGPT extension icon appears only when a ChatGPT page is open  
+> (`https://chat.openai.com` or `https://chatgpt.com`).  
+> This is intentional — the extension activates only in ChatGPT tabs to ensure performance and privacy.
+
 ## License
+
 MIT
